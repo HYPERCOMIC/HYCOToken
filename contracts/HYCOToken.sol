@@ -999,7 +999,6 @@ contract HYCOToken is ERC20, ERC20Burnable, Pausable, Ownable, Confirmer {
         view 
         returns (uint256 lockAmount, uint256 startTime, uint256 releaseMonths, uint256 released) 
     {
-        //require(msg.sender == walletAddress || msg.sender == owner(), "Caller is not the owner.");
         require(_lockInfos[walletAddress].amount > 0, "Not exist lock info.");
         
         uint256 unLockAmount = _getUnLockAmount(walletAddress, block.timestamp);
